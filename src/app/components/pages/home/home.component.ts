@@ -85,6 +85,7 @@ export class HomeComponent implements OnInit {
       //this.tamCola = data.length;
       this.allColas = data;
     });
+    // this.getClient();
   }
 
   openDialog() {
@@ -96,8 +97,8 @@ export class HomeComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe((result) => {
       console.log(`Dialog result: ${result}`);
-      // this.getClient();
-      this._router.navigate(['/home']);
+      //this.getClient();
+      // this._router.navigate(['/home']);
     });
   }
 }

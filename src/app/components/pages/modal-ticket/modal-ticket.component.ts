@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { MatDialogRef } from '@angular/material/dialog';
 import { ClientsService } from 'src/app/services/clients.service';
 import { ColasService } from 'src/app/services/colas.service';
 
@@ -18,7 +19,11 @@ export class ModalTicketComponent implements OnInit {
     // cola_time: new FormControl(),
   });
 
-  constructor(private colas: ColasService, private clients: ClientsService) {}
+  constructor(
+    private colas: ColasService,
+    private clients: ClientsService,
+    public dialogRef: MatDialogRef<ModalTicketComponent>
+  ) {}
 
   ngOnInit(): void {
     this.getColas();
@@ -45,5 +50,9 @@ export class ModalTicketComponent implements OnInit {
       .subscribe((data) => {
         console.log(data);
       });
+  }
+
+  closed() {
+    this.dialogRef.close();
   }
 }
