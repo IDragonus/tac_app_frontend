@@ -1,0 +1,34 @@
+<div class="container">
+  <mat-card>
+    <button class="btn btn-primary" (click)="openDialog()">New Ticket</button>
+    <hr />
+    <table class="table text-center">
+      <thead>
+        <tr>
+          <th>No.</th>
+          <th>Client</th>
+          <th>Status</th>
+          <th>Cola</th>
+          <th>Time</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let value of clientFinal; let i = index">
+          <td>{{ i + 1 }}</td>
+          <td>{{ value.client_name }}</td>
+          <td class="text-danger fw-bold">
+            {{ value.client_status | titlecase }}
+          </td>
+          <td>{{ value.cola_name }}</td>
+          <td>{{ value.cola_time }}</td>
+          <td>
+            <button class="btn btn-success" (click)="atender(value)">
+              Atender
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </mat-card>
+</div>

@@ -1,0 +1,36 @@
+<h3 class="text-center fw-bold">Create new ticket</h3>
+<hr />
+<div class="container-fluid">
+  <form [formGroup]="formNewClient">
+    <div class="row">
+      <mat-form-field appearance="legacy">
+        <mat-label>Client name:</mat-label>
+        <input
+          matInput
+          placeholder="Name"
+          formControlName="client_name"
+          id="client_name"
+        />
+      </mat-form-field>
+    </div>
+    <!-- <div class="row">
+      <mat-form-field appearance="standard">
+        <mat-label>Name Client</mat-label>
+        <input matInput placeholder="Placeholder" />
+      </mat-form-field>
+    </div> -->
+    <div class="row">
+      <mat-form-field>
+        <mat-label>Cola</mat-label>
+        <mat-select formControlName="cola_id">
+          <mat-option *ngFor="let cola of allColas" [value]="cola.cola_id">
+            {{ cola.cola_name }} / {{ cola.cola_time }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div class="row">
+      <button class="btn btn-primary" (click)="createNewUser()">Save</button>
+    </div>
+  </form>
+</div>

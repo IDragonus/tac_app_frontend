@@ -1,0 +1,83 @@
+<mat-toolbar color="primary">
+  <mat-icon type="button" mat-button (click)="drawer.toggle()"
+    ><span>menu</span>
+  </mat-icon>
+  <span class="example-spacer"></span>
+  <button mat-button>Wellcome!</button>
+</mat-toolbar>
+<mat-drawer-container class="example-container" autosize>
+  <mat-drawer #drawer class="example-sidenav" mode="side">
+    <div>
+      <mat-icon>
+        <span class="material-icons-outlined" [routerLink]="['/lisshop']">
+          home
+        </span>
+      </mat-icon>
+    </div>
+    <div>
+      <mat-icon>
+        <span
+          class="material-icons-outlined"
+          [routerLink]="['/lisshop/list-product']"
+        >
+          shopping_cart
+        </span>
+      </mat-icon>
+    </div>
+    <div>
+      <mat-icon>
+        <span
+          class="material-icons-outlined"
+          [routerLink]="['lisshop/sell-list']"
+        >
+          attach_money
+        </span>
+      </mat-icon>
+    </div>
+    <div>
+      <mat-icon>
+        <span
+          class="material-icons-outlined"
+          [routerLink]="['lissshop/inventory']"
+        >
+          description
+        </span>
+      </mat-icon>
+    </div>
+    <div>
+      <mat-icon>
+        <span
+          class="material-icons-outlined"
+          [routerLink]="['lisshop/user-profile']"
+        >
+          account_circle
+        </span>
+      </mat-icon>
+    </div>
+    <div>
+      <mat-icon>
+        <span class="material-icons-round" [routerLink]="['/lisshop/login']">
+          login
+        </span>
+      </mat-icon>
+    </div>
+    <div>
+      <mat-icon>
+        <span class="material-icons-outlined"> logout </span>
+      </mat-icon>
+    </div>
+    <div>
+      <mat-icon>
+        <span class="material-icons-round" [routerLink]="['/lisshop/register']">
+          app_registration
+        </span>
+      </mat-icon>
+    </div>
+  </mat-drawer>
+
+  <div class="example-sidenav-content">
+    <div class="contenedor mb-4 mt-4">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</mat-drawer-container>
